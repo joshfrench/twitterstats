@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %title A Visual Analysis of My Twitter Habits
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => 'reset.css'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => 'stats.css'}
+  %body
+    .main
+      %h1 a visual analysis of my twitter habits
+      %p.byline @joshfrench
+      %p== Based on an analysis of #{Tweet.count} tweets between #{Tweet.min(:created_at).strftime '%B %Y'} and the present.
+
+      %h2 Distribution by length
+      %img{:src => Tweet.length_chart, :title => 'Frequency by length of tweet', :width => 600, :height => 200}
+      %p Tweet length in characters vs. frequency. Distribution skewed toward the highest percentiles by my compulsion to tweet in exactly 140 chars.
+
+      %h2 Frequently mentioned people
+      %img{:src => Tweet.name_chart, :title => 'Most frequently mentioned users', :width => 600, :height => 300}
+      %p Top 10 most commonly mentioned usernames, with total mentions. This should not be construed as an accurate representation of my affinity towards any specific individual, although if you're not on this list maybe you should ask yourself if you've done anything nice for me lately.
+
+      %h2 Daily activity
+      %img{:src => Tweet.time_chart, :title => 'Activity by day/hour', :width => 600, :height => 250}
+      %p Relative frequency of tweets plotted by day and hour. I bet if I overlaid this with relative beer consumption there would be an observable correlation.
+
+      %h2 Probable subject matter
+      %img{:src => Tweet.subject_chart, :title => 'Distribution by subject matter', :width => 600, :height => 300}
+      %p Based on a na&iuml;ve Bayesian analysis. The arbitrary category selection and a data set highly resistant to decomposition make this largely meaningless. Perhaps of more interest: almost 2% of my tweets are me crushing on my dentist.
+
+      .footer
+        %p
+          == This page was generated with the latest available data as of #{Time.now.strftime('%I:%M%p').gsub(/^[0]/,'').downcase} #{Time.now.strftime('%Z')}.
+        %p
+          = surround 'Follow me on twitter ', '.' do
+            %a{:href => 'http://twitter.com/joshfrench'} here

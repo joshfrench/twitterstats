@@ -1,0 +1,10 @@
+body { background-color: #b7e2e9;}
+.main { margin: 0 auto; padding: 14px 36px; width: 600px; background-color: #FFF;}
+html { font-family: Verdana, Arial, sans-serif; font-size: 14px;}
+h1 { color: #2292d2; border-bottom: 1px solid #2292d2; font-size: 22px; font-weight: bold; padding-bottom: 6px;}
+h2 { font-size: 14px; font-weight: bold; padding: 9px 2px 0 0; color: #840307; border-top: 1px solid #840307; margin-top: 59px;}
+p { margin-bottom: 14px;}
+.byline { text-align: right; margin-top: 2px; color: #b7e2e9;}
+img { margin: 22px auto 36px; display: block;}
+.footer { border-top: 1px solid #840307; margin-top: 36px; padding: 9px 0; font-size: 14px; }
+a { color: #2292d2; font-weight: bold;}
